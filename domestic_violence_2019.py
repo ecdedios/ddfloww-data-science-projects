@@ -5,7 +5,7 @@ from sklearn.linear_model import LogisticRegressionCV
 from collections import OrderedDict
 from sklearn.metrics import accuracy_score
 
-df = pd.read_csv('domestic_violence-2019.csv')
+df = pd.read_csv('domestic_violence_2019.csv')
 
 x_columns = ['slap',
              'threat_object',
