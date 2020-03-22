@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+    <head>
+
+        <!-- PAGE DESCRIPTION
+        ================================================== -->
+        <meta charset="utf-8">
+        <title>[RESULT] Predicting Reassault - A Domestic Violence Prevention Project</title>
+        <meta name="description" content="Using data from a study on domestic violence cases in Chicago (Block, C. R., 1995), analyzed reported cases to predict the key indicators of recidivism (re-assault) and created web app with personalized resources for victims of domestic violence.">
+        <meta name="author" content="Ednalyn C. De Dios, Jesse Ruiz, Matthew Capper">
+
+        <!-- MOBILE SPECIFIC
+        ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- CSS
+         ================================================== -->
+        <link rel="stylesheet" href="../static/css/domestic-violence-2019/default.css">
+        <link rel="stylesheet" href="../static/css/domestic-violence-2019/layout.css">
+        <link rel="stylesheet" href="../static/css/domestic-violence-2019/media-queries.css">
+
+        <!-- SCRIPTS
+        ================================================== -->
+        <script src="../static/js/modernizr.js"></script>
+
+        <!-- FAVICONS & APP ICONS
+        ================================================== -->
+        <link rel="apple-touch-icon" sizes="180x180" href="../static/ico/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../static/ico/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../static/ico/favicon-16x16.png">
+        <link rel="manifest" href="../static/ico/site.webmanifest">
+        <link rel="mask-icon" href="../static/ico/safari-pinned-tab.svg" color="#6600ff">
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="theme-color" content="#ffffff">
+
+    </head>
+
+    <body>
+
+        <!-- HEADER
+        ================================================== -->
+        <header id="home">
+        
+            <nav id="nav-wrap">
+            
+                <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+                <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+                
+                <ul id="nav" class="nav">
+                    <li><a href="/domestic-violence">Go Back.</a></li>
+                    <li class="current"><a class="smoothscroll" href="#home">Prediction</a></li>
+                    <li><a class="smoothscroll" href="#model">Questions</a></li>
+                    <li><a class="smoothscroll" href="#contact">Contact Us</a></li>
+                </ul><!-- end #nav -->
+            
+            </nav><!-- end #nav-wrap -->
+            
+            <div class="row banner">
+                <div class="banner-text">
+                    <h1 class="responsive-headline">{{ prediction }}
+                    <hr />
+                    <h3 class="add-bottom"><span>Likelihood of reassault is {{ prediction }}.</span></h3>
+                    <p><a href="../static/docs/Safety_Planning_Worksheet.pdf" class="button">Download Safety Plan</a></p>
+                </div>
+            </div><!-- end of .row -->
+            
+            <p class="scrolldown">
+                <a class="smoothscroll" href="#model"><i class="icon-down-circle"></i></a>
+            </p>
+            
+        </header><!-- end HEADER -->
+
+
+        <!-- MODEL
+        ================================================== -->
+        <section id="model">
+        
+            <div class="row add-bottom">
+                <div class="twelve columns add-bottom">
+                    <h1>The Model</h1>
+                </div>
+            </div><!-- end model preamble -->
+        
+            <div class="row add-bottom">
+                <!-- <form method="POST" action="/submit_dv"> -->
+
+                    <div class="eight columns add-bottom">
+                    
+                        <h3>Has he ever slapped you?</h3>
+                        {% if feature1 == 0 %}
+                            <p>You answered NO.</p>
+                        {% else %}
+                            <p>You answered YES.</p>
+                        {% endif %}
+                        <p>&nbsp;</p>
+
+                        <h3>Has he ever threaten you with an object?</h3>
+                        {% if feature2 == 0 %}
+                            <p>You answered NO.</p>
+                        {% else %}
+                            <p>You answered YES.</p>
+                        {% endif %}
+                        <p>&nbsp;</p>
+
+                        <h3>Has he ever beaten you?</h3>
+                        {% if feature3 == 0 %}
+                            <p>You answered NO.</p>
+                        {% else %}
+                            <p>You answered YES.</p>
+                        {% endif %}
+                        <p>&nbsp;</p>
+
+                        <h3>Has he ever tried to limit your contact with your family?</h3>
+                        {% if feature4 == 0 %}
+                            <p>You answered NO.</p>
+                        {% else %}
+                            <p>You answered YES.</p>
+                        {% endif %}
+                        <p>&nbsp;</p>
+
+                        <h3>Has he ever kicked or punched you?</h3>
+                        {% if feature5 == 0 %}
+                            <p>You answered NO.</p>
+                        {% else %}
+                            <p>You answered YES.</p>
+                        {% endif %}
+                        <p>&nbsp;</p>
+
+                        <h3>Has he threatened to hit you before?</h3>
+                        {% if feature6 == 0 %}
+                            <p>You answered NO.</p>
+                        {% else %}
+                            <p>You answered YES.</p>
+                        {% endif %}
+                        <p>&nbsp;</p>
+
+                        <h3>Has he pushed or shoved you?</h3>
+                        {% if feature7 == 0 %}
+                            <p>You answered NO.</p>
+                        {% else %}
+                            <p>You answered YES.</p>
+                        {% endif %}
+                        <p>&nbsp;</p>
+
+                        <h3>Is he violently and constantly jealous of you?</h3>
+                        {% if feature8 == 0 %}
+                            <p>You answered NO.</p>
+                        {% else %}
+                            <p>You answered YES.</p>
+                        {% endif %}
+                        <p>&nbsp;</p>
+
+                        <h3>Have you ever felt like your life was in danger?</h3>
+                        {% if feature9 == 0 %}
+                            <p>You answered NO.</p>
+                        {% else %}
+                            <p>You answered YES.</p>
+                        {% endif %}
+                        <p>&nbsp;</p>
+                                                
+                    </div>
+                    
+                    <div class="four columns add-bottom">
+                        
+                    </div>
+            
+                <!-- </form> -->
+            </div><!-- end model text -->
+            
+        </section><!-- end MODEL -->
+
+        <!-- RECOMMENDATIONS
+        ================================================== -->
+        <section id="recommendations">
+        
+            <div class="row add-bottom">
+            
+                <div class="two columns add-bottom">
+                </div>
+                <div class="eight columns collapsed add-bottom">
+                
+                    <h1>For Service Providers</h1>
+                    <p>For any organization that help victims of domestic violence we recommend that <mark>anonymized data collection be integratred into business practices</mark>. <span>We cannot afford to work in silos</span> any longer. We have the technology, and we should use it and control it, rather be controlled by it.</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>If you or somebody you know might be experiencing domestic violence, please call 1-800-799-7233.</p>
+
+                </div><!-- twelve columns end -->
+
+                <div class="two columns">
+                </div>
+
+            </div><!-- end .row -->
+            
+        </section><!-- end recommendations --> 
+
+
+
+        <!-- CONTACT
+        ================================================== -->
+        <section id="contact">
+
+            <div class="row section-head">
+
+                <div class="twelve columns">
+
+                    <h1>Contact Us</h1>
+                    <h2>https://ddfloww.com/data-science-projects/domestic-violence-2019</h2>
+                    <p>&nbsp;</p>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <aside class="four columns footer-widgets">
+
+                    <div class="widget widget_contact">
+
+                        <img src="../static/images/domestic-violence-2019/matthew.jpg">
+                        <h4>Matthew Capper</h4>
+                        <p class="address">
+                        <a href="mailto:matthew.capper01@gmail.com">Email &middot;
+                        <a href="https://twitter.com/mcapper01">Twitter &middot;
+                        <a href="https://github.com/matthewcapper">Github <br>
+                        <a href="https://www.linkedin.com/in/matthew-capper/">LinkedIn &middot;
+                        <a href="https://alumni.codeup.com/uploads/697-1559489802.pdf">Resumé</a>
+                        </p>
+
+                    </div>
+
+                </aside>
+
+                <aside class="four columns footer-widgets">
+
+                    <div class="widget widget_contact">
+
+                        <img src="../static/images/domestic-violence-2019/dd.jpg">
+                        <h4>Ednalyn C. De Dios</h4>
+                        <p class="address">
+                        <a href="mailto:ednalyn.dedios@gmail.com">Email &middot;
+                        <a href="https://twitter.com/ecdedios">Twitter &middot;
+                        <a href="https://github.com/ecdedios">Github <br>
+                        <a href="https://www.linkedin.com/in/ecdedios/">LinkedIn &middot;
+                        <a href="https://alumni.codeup.com/uploads/699-1559446559.pdf">Resumé</a>
+                        </p>
+
+                    </div>
+
+                </aside>
+
+                <aside class="four columns footer-widgets">
+
+                    <div class="widget widget_contact">
+
+                        <img src="../static/images/domestic-violence-2019/jesse.jpg">
+                        <h4>Jesse J. Ruiz</h4>
+                        <p class="address">
+                        <a href="mailto:jesse.jinna.ruiz@gmail.com">Email &middot;
+                        <a href="https://twitter.com/jessejinnaruiz">Twitter &middot;
+                        <a href="https://github.com/jessejinnaruiz">Github <br>
+                        <a href="https://www.linkedin.com/in/jesse-jinna-ruiz/">LinkedIn &middot;
+                        <a href="https://alumni.codeup.com/uploads/705-1560351051.pdf">Resumé</a>
+                        </p>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section> <!-- Contact Section End-->
+
+
+        <!-- FOOTER
+        ================================================== -->
+        <footer>
+
+            <div class="row">
+
+                <div class="twelve columns">
+
+                    <ul class="social-links">
+                        <li><a href="https://github.com/codeup-capstone-one/domestic-violence"><i class="fa fa-github"></i></a></li>
+                    </ul>
+
+                    <ul class="copyright">
+                        <li>&copy; 2020 Codeup Queers</li>
+                    </ul>
+
+                </div>
+
+                <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home">
+                    <i class="icon-up-open"></i></a>
+                </div>
+
+            </div>
+
+        </footer> <!-- Footer End-->
+
+
+        <!-- JAVASCRIPT
+        ================================================== -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../static/js/jquery-1.10.2.min.js"><\/script>')</script>
+        <script type="text/javascript" src="../static/js/jquery-migrate-1.2.1.min.js"></script>
+
+        <script src="../static/js/jquery.flexslider.js"></script>
+        <script src="../static/js/waypoints.js"></script>
+        <script src="../static/js/jquery.fittext.js"></script>
+        <script src="../static/js/magnific-popup.js"></script>
+        <script src="../static/js/init.js"></script>
+
+
+    </body>
+
+</html>
