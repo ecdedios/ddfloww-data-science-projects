@@ -7,15 +7,15 @@ def index():
     return render_template('index.html')
 
 @app.route('/data-science-projects/domestic-violence-2019')
-def show_domestic_violence_1():
+def show_domestic_violence_2019():
     return render_template('/domestic-violence-2019/index.html')
 
 @app.route('/data-science-projects/datathon-2019')
 def show_datathon_2019():
     return render_template('/datathon-2019/index.html')
 
-@app.route('/data-science-projects/domestic-violence/submit', methods=['GET', 'POST'])
-def submit_dv():
+@app.route('/data-science-projects/domestic-violence-2019/submit', methods=['GET', 'POST'])
+def result_domestic_violence_2019():
     error = None
     if request.method == 'POST':
         if request.form['q1'] == 'x':
@@ -39,7 +39,7 @@ def submit_dv():
                                                 feature7,
                                                 feature8,
                                                 feature9)
-            return render_template('/data-science-projects/domestic-violence/submit.html',
+            return render_template('/data-science-projects/domestic-violence-2019/submit.html',
                                     prediction=prediction,
                                     feature1=feature1,
                                     feature2=feature2,
@@ -50,7 +50,7 @@ def submit_dv():
                                     feature7=feature7,
                                     feature8=feature8,
                                     feature9=feature9,)        
-        return render_template('/data-science-projects/domestic-violence/index.html', error=error)
+        return render_template('/data-science-projects/domestic-violence-2019/index.html', error=error)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
