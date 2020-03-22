@@ -8,7 +8,7 @@ def index():
 
 @app.route('/data-science-projects/domestic-violence-1')
 def show_domestic_violence_1():
-    return render_template('/domestic-violence-1/index.html')
+    return render_template('/domestic-violence-2019/index.html')
 
 @app.route('/data-science-projects/datathon-2019')
 def show_datathon_2019():
