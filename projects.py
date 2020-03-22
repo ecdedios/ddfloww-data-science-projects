@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/data-science-projects/domestic-violence-1')
+@app.route('/data-science-projects/domestic-violence-2019')
 def show_domestic_violence_1():
     return render_template('/domestic-violence-2019/index.html')
 
