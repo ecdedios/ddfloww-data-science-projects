@@ -1,3 +1,4 @@
+import domestic_violence_2019
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -30,15 +31,15 @@ def result_domestic_violence_2019():
             feature7 = int(float(request.form['q7']))
             feature8 = int(float(request.form['q8']))
             feature9 = int(float(request.form['q9']))
-            prediction = predict2.predictorizer(feature1,
-                                                feature2,
-                                                feature3,
-                                                feature4,
-                                                feature5,
-                                                feature6,
-                                                feature7,
-                                                feature8,
-                                                feature9)
+            prediction = domestic_violence_2019.predictorizer(feature1,
+                                                              feature2,
+                                                              feature3,
+                                                              feature4,
+                                                              feature5,
+                                                              feature6,
+                                                              feature7,
+                                                              feature8,
+                                                              feature9)
             return render_template('/data-science-projects/domestic-violence-2019/submit.html',
                                     prediction=prediction,
                                     feature1=feature1,
