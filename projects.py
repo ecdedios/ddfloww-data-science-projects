@@ -40,7 +40,7 @@ def result_domestic_violence_2019():
                                                               feature7,
                                                               feature8,
                                                               feature9)
-            return render_template('/data-science-projects/domestic-violence-2019/submit.html',
+            return render_template('/domestic-violence-2019/submit.html',
                                     prediction=prediction,
                                     feature1=feature1,
                                     feature2=feature2,
@@ -51,7 +51,7 @@ def result_domestic_violence_2019():
                                     feature7=feature7,
                                     feature8=feature8,
                                     feature9=feature9,)        
-        return render_template('/data-science-projects/domestic-violence-2019/index.html', error=error)
+        return render_template('/domestic-violence-2019/index.html', error=error)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
