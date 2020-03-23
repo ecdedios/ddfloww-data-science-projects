@@ -11,8 +11,8 @@ def index():
 def show_domestic_violence_2019():
     return render_template('/domestic-violence-2019/index.html')
 
-@app.route('/data-science-projects/domestic-violence-2019/submit_dv', methods=['GET', 'POST'])
-def submit_dv():
+@app.route('/data-science-projects/domestic-violence-2019/submit', methods=['GET', 'POST'])
+def submit_domestic_violence_2019():
     error = None
     if request.method == 'POST':
         if request.form['q1'] == 'x':
