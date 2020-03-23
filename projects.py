@@ -16,6 +16,10 @@ def show_domestic_violence_2019():
 def show_datathon_2019():
     return render_template('/datathon-2019/index.html')
 
+@app.route('/data-science-projects/natural-language-processing-app')
+def show_nlp_app():
+    return render_template('/natural-language-processing-app/index.html')
+
 @app.route('/data-science-projects/domestic-violence-2019/submit', methods=['GET', 'POST'])
 def submit_domestic_violence_2019():
     error = None
